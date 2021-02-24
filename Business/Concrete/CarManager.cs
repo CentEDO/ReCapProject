@@ -16,12 +16,13 @@ namespace Business.Concrete
         }
         public void Add(Car car)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Your car is added!");
+
         }
 
         public void Delete(Car car)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Your car is deleted!");
         }
 
         public List<Car> GetAll()
@@ -31,12 +32,13 @@ namespace Business.Concrete
 
         public List<Car> GetById(int id)
         {
-            throw new NotImplementedException();
+            return _carDal.GetById(id);
         }
 
         public void Update(Car car)
         {
-            throw new NotImplementedException();
+            
+            Console.WriteLine("Your car is updated!");
         }
     }
 }

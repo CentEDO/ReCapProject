@@ -9,10 +9,15 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             CarManager carManager = new CarManager(new InMemoryCarDal());
+            foreach (var car in carManager.GetById(1))
+            {
+                Console.WriteLine(car.Description);
+            }
             foreach (var car in carManager.GetAll())
             {
                 Console.WriteLine(car.Description);
             }
+
 
         }
     }
