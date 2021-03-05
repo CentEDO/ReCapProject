@@ -16,7 +16,15 @@ namespace Business.Concrete
         }
         public void Add(Car car)
         {
-            Console.WriteLine("Your car is added!");
+            if (car.Description.Length<=2 && car.DailyPrice<=0)
+            {
+                Console.WriteLine("Your cars' name is not available. It must be minimum 2 characters and daily price must be over the 0!");
+            }
+            else if (car.Description.Length >= 2 && car.DailyPrice > 0)
+            {
+                Console.WriteLine("Your car is added!");
+            }
+            
 
         }
 
@@ -32,7 +40,7 @@ namespace Business.Concrete
 
         public List<Car> GetById(int id)
         {
-            return _carDal.GetById(id);
+            return _carDal.GetAll(c => c.Id == id);
         }
 
         public void Update(Car car)
